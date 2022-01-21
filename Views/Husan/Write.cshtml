@@ -1,0 +1,37 @@
+@model Post
+
+<form asp-action="Write" asp-controller="Husan" method="post" id="form" enctype="multipart/form-data">
+    <div class="container my-4">
+
+        <div class="d-inline mx-2">
+
+            <div class="input-group mb-3">
+
+            <dl>
+            <dt>
+                <label asp-for="BannerImage"></label>
+            </dt>
+            <dd>
+                <input asp-for="BannerImage" type="file">
+                <span asp-validation-for="BannerImage"></span>
+            </dd>
+            </dl>
+            <input asp-page-handler="Upload" class="btn" type="submit" value="Upload" />
+
+            </div>
+
+            <input asp-for="Title" id="post-title" class="bg-light w-75 border-0 outline-none" placeholder="Title ...">
+
+            <div class="d-inline mx-2">
+
+                <input asp-for="Content" id="content" class="bg-light border-0 w-50 outline-none" placeholder="Content">
+
+            </div>
+
+            <div style="position: absolute; right: 300px; top:100px;">
+                <button type="submit" class="btn btn-info mr-auto">Publish</button>
+            </div>
+
+        </div>
+    </div>
+</form>

@@ -1,0 +1,13 @@
+﻿@model List<Post>
+@foreach (var item in @Model)
+{
+    <p>
+        @item.Title
+    </p>
+    <p>
+        @item.Content
+    </p>
+    <p>
+        @item.BannerImage
+    </p>
+}
