@@ -19,19 +19,18 @@ namespace test1.Models
                 ID=model.Id,
                 Title=model.Title,
                 Content=model.Content,
-            //     BannerImage=GetImageEntity(model.BannerImage)
-            // };
+                BannerImage=GetImageEntity(model.BannerImage)
             };
             return post;
         }
-            // private static byte[] GetImageEntity(IFormFile file)
-            // {
-            // using var stream = new MemoryStream();
+            private static byte[] GetImageEntity(IFormFile file)
+            {
+            using var stream = new MemoryStream();
 
-            // // file.CopyTo(stream);
-            // // var Data = stream.Read();
-            // // return Data;
-            // }
+            file.CopyTo(stream);
+            var Data=stream.ToArray();
+            return Data;
+            }
         
     }
 }
