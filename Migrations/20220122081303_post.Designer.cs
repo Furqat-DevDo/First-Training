@@ -12,7 +12,7 @@ using test1.Data;
 namespace test1.Migrations
 {
     [DbContext(typeof(PostDbContext))]
-    [Migration("20220121200929_post")]
+    [Migration("20220122081303_post")]
     partial class post
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

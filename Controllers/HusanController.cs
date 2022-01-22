@@ -1,6 +1,7 @@
 ﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using test1.Data;
+using test1.Entity;
 using test1.Models;
 
 namespace test1.Controllers;
@@ -20,11 +21,10 @@ public class HusanController : Controller
     public IActionResult Index()
     {
         var posts=_db.posts;
-        var pl=new List<Post>();
+        var pl=new List<PostEntity>();
         foreach (var item in posts)
         {
-            var m=item.ToModel(item);
-            pl.Add(m);
+            pl.Add(item);
         }
         return View(pl);
     }
